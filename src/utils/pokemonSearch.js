@@ -1,17 +1,21 @@
 const axios = require('axios');
 
 const pokemonInfo = require('./pokemonInfo');
+const numberOrString = require('./utils/numberOrString');
+const space = require('./utils/space');
 
 module.exports = async function searchPoke(pokemon) {
   try {
-    const apiPoke = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon.toLowerCase()}/`);
-    const pokeSuccess = apiPoke.data;
+    const value = await numberOrString(pokemon);
 
-    pokemonInfo(pokeSuccess);
-  } catch (error) {
-    console.log();
-    console.log('-------------------------');
+    const apiPoke = await axios.get(`https://pokeapi.co/api/v2/pokemon/${value ? pokemon : pokemon.toLowerCase()}/`);
+    const pokeSuccess = apiPoke.data;
     
-    console.log(`Impossível encontrar esse pokemon (${pokemon})`);
+    pokemonInfo(pokeSuccess);
+
+  } catch (error) {
+    space();
+
+    console.log(`Cannot find this pokemon "${pokemon}"!!!`);
   };
 };

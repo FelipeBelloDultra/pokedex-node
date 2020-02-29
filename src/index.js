@@ -1,6 +1,15 @@
+const clear = require('clear');
+
 const pokemonSearch = require('./utils/pokemonSearch');
 const pokemonQuestion = require('./utils/pokemonQuestion');
+const space = require('./utils/utils/space');
 
-const poke = pokemonQuestion();
+clear();
+space();
 
-pokemonSearch(poke);
+console.log('Welcome to POKEDEX!!!')
+space();
+
+const option = pokemonQuestion();
+
+pokemonSearch(option);
