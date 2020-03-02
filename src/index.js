@@ -1,8 +1,8 @@
 const clear = require('clear');
 
-const pokemonSearch = require('./utils/pokemonSearch');
-const pokemonQuestion = require('./utils/pokemonQuestion');
-const space = require('./utils/utils/space');
+const pokemonSearch = require('./search/pokemonSearch');
+const pokemonQuestion = require('./question/pokemonQuestion');
+const space = require('./utils/space');
 
 clear();
 space();

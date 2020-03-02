@@ -1,8 +1,8 @@
 const axios = require('axios');
 
-const pokemonInfo = require('./pokemonInfo');
-const numberOrString = require('./utils/numberOrString');
-const space = require('./utils/space');
+const pokemonInfo = require('../info/pokemonInfo');
+const numberOrString = require('../utils/numberOrString');
+const space = require('../utils/space');
 
 module.exports = async function searchPoke(pokemon) {
   try {
