@@ -7,9 +7,9 @@ module.exports = function infoPokemon(pokemon) {
   console.log(`${name}.`);
 
   space();
-  console.log(`${name} attacks: `);
-  const attack = pokemon.moves.map(attacks => attacks.move.name.replace('-', ' '));
-  console.log(`${attack.join(', ')}.`);
+  console.log('Attacks: ');
+  const ability = pokemon.abilities.map(ability => ability.ability.name.replace('-',' '));
+  console.log(`${ability.join(', ',',')}.`);
 
   space();
   console.log('Type: ');
